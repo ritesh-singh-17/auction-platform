@@ -91,7 +91,7 @@ export const getAllAuctionItems = () => async (dispatch) => {
   dispatch(auctionSlice.actions.getAllAuctionItemRequest());
   try {
     const response = await axios.get(
-      "http://localhost:5000/api/v1/auctionitem/allitems",
+      "https://auction-platform-server.onrender.com/api/v1/auctionitem/allitems",
       { withCredentials: true }
     );
     dispatch(
@@ -111,7 +111,7 @@ export const getMyAuctionItems = () => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      "http://localhost:5000/api/v1/auctionitem/myitems",
+      "https://auction-platform-server.onrender.com/api/v1/auctionitem/myitems",
       { 
         withCredentials: true,
         headers: {
@@ -133,7 +133,7 @@ export const getAuctionDetail = (id) => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.get(
-      `http://localhost:5000/api/v1/auctionitem/auction/${id}`,
+      `https://auction-platform-server.onrender.com/api/v1/auctionitem/auction/${id}`,
       {
         withCredentials: true,
         headers: {
@@ -156,7 +156,7 @@ export const createAuction = (data) => async (dispatch) => {
   // headers: { 'Authorization': `Bearer ${token}` }
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/v1/auctionitem/create",
+      "https://auction-platform-server.onrender.com/api/v1/auctionitem/create",
       data,
       {
         withCredentials: true,
@@ -182,7 +182,7 @@ export const republishAuction = (id, data) => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.put(
-      `http://localhost:5000/api/v1/auctionitem/item/republish/${id}`,
+      `https://auction-platform-server.onrender.com/api/v1/auctionitem/item/republish/${id}`,
       data,
       {
         withCredentials: true,
@@ -210,7 +210,7 @@ export const deleteAuction = (id) => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.delete(
-      `http://localhost:5000/api/v1/auctionitem/delete/${id}`,
+      `https://auction-platform-server.onrender.com/api/v1/auctionitem/delete/${id}`,
       {
         withCredentials: true,
         headers: { 'Authorization': `Bearer ${token}` }

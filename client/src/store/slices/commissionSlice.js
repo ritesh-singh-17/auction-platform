@@ -26,7 +26,7 @@ export const postCommissionProof = (data) => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/v1/commission/proof",
+      "https://auction-platform-server.onrender.com/api/v1/commission/proof",
       data,
       {
         withCredentials: true,

@@ -109,7 +109,7 @@ export const getMonthlyRevenue = () => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.get(
-      "http://localhost:5000/api/v1/superadmin/monthlyincome",
+      "https://auction-platform-server.onrender.com/api/v1/superadmin/monthlyincome",
       { 
         withCredentials: true,
         headers: { 'Authorization': `Bearer ${token}` }
@@ -131,7 +131,7 @@ export const getAllUsers = () => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.get(
-      "http://localhost:5000/api/v1/superadmin/users/getall",
+      "https://auction-platform-server.onrender.com/api/v1/superadmin/users/getall",
       { 
         withCredentials: true,
         headers: { 'Authorization': `Bearer ${token}` }
@@ -149,7 +149,7 @@ export const getAllPaymentProofs = () => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.get(
-      "http://localhost:5000/api/v1/superadmin/paymentproofs/getall",
+      "https://auction-platform-server.onrender.com/api/v1/superadmin/paymentproofs/getall",
       {
         withCredentials: true,
         headers: { 'Authorization': `Bearer ${token}` }
@@ -171,7 +171,7 @@ export const deletePaymentProof = (id) => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.delete(
-      `http://localhost:5000/api/v1/superadmin/paymentproof/delete/${id}`,
+      `https://auction-platform-server.onrender.com/api/v1/superadmin/paymentproof/delete/${id}`,
       { 
         withCredentials: true,
         headers: { 'Authorization': `Bearer ${token}` }
@@ -192,7 +192,7 @@ export const getSinglePaymentProofDetail = (id) => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.get(
-      `http://localhost:5000/api/v1/superadmin/paymentproof/${id}`,
+      `https://auction-platform-server.onrender.com/api/v1/superadmin/paymentproof/${id}`,
       {
         withCredentials: true,
         headers: { 'Authorization': `Bearer ${token}` }
@@ -214,7 +214,7 @@ export const updatePaymentProof = (id, status, amount) => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.put(
-      `http://localhost:5000/api/v1/superadmin/paymentproof/status/update/${id}`,
+      `https://auction-platform-server.onrender.com/api/v1/superadmin/paymentproof/status/update/${id}`,
       { status, amount },
       {
         withCredentials: true, 
@@ -240,7 +240,7 @@ export const deleteAuctionItem = (id) => async (dispatch) => {
   const token = Cookies.get('access_token')
   try {
     const response = await axios.delete(
-      `http://localhost:5000/api/v1/superadmin/auctionitem/delete/${id}`,
+      `https://auction-platform-server.onrender.com/api/v1/superadmin/auctionitem/delete/${id}`,
       {
         withCredentials: true,
         headers: { 'Authorization': `Bearer ${token}` }

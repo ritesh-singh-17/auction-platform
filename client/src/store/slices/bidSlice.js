@@ -26,7 +26,7 @@ export const placeBid = (id, data) => async (dispatch) => {
   dispatch(bidSlice.actions.bidRequest());
   const token = Cookies.get('access_token')
   try {
-    const response = await axios.post(`http://localhost:5000/api/v1/bid/place/${id}`, data, {
+    const response = await axios.post(`https://auction-platform-server.onrender.com/api/v1/bid/place/${id}`, data, {
       withCredentials: true,
       headers: { 
         "Content-Type": "application/json",
